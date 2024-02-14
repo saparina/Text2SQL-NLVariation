@@ -1,0 +1,40 @@
+{
+    "run_name": "t5-3b-augs-eval",
+    "model_name_or_path": "irisaparina/t5-3b-spider-nlvariation",
+    "dataset": "spider",
+    "source_prefix": "",
+    "schema_serialization_type": "peteshaw",
+    "schema_serialization_randomized": false,
+    "schema_serialization_with_db_id": true,
+    "schema_serialization_with_db_content": true,
+    "normalize_query": true,
+    "target_with_db_id": true,
+    "cache_dir": "/transformers_cache",
+    "data_dir": "../data/diagnostic-robustness-text-to-sql/data/NLQ_column_carrier",
+    "file_prefix": "post",
+    "do_train": false,
+    "do_eval": false,
+    "do_predict": true,
+    "test_sections": [
+        "validation"
+    ],
+    "fp16": false,
+    "per_device_eval_batch_size": 1,
+    "seed": 1,
+    "report_to": [
+        "wandb"
+    ],
+    "predict_with_generate": true,
+    "num_beam_groups": 1,
+    "num_beams": 1,
+    "diversity_penalty": 0.0,
+    "max_val_samples": 5000,
+    "use_picard": false,
+    "launch_picard": false,
+    "metric_config": "test_suite",
+    "val_max_target_length": 256,
+    "val_max_time": 1200,
+    "predict_and_eval": true,
+    "num_gpu": 1,
+    "output_dir": "./eval/dr_spider/t5-spider-augs/post/NLQ_column_carrier"
+}

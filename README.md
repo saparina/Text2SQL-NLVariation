@@ -37,10 +37,34 @@ conda activate nlvariation_env
 ```
 
 Install RESDSQL dependencies:
-```
+```bash
 cd RESDSQL
 pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz
 python nltk_downloader.py
+```
+
+Clone evaluation scripts:
+```bash
+mkdir picard/third_party
+cd picard/third_party
+git clone https://github.com/facebookincubator/hsthrift
+git clone https://github.com/facebook/zstd
+git clone https://github.com/facebook/wangle
+git clone https://github.com/facebook/folly
+git clone https://github.com/elementai/spider
+git clone https://github.com/elementai/test-suite-sql-eval
+git clone https://github.com/hasktorch/tokenizers
+git clone https://github.com/facebook/fbthrift
+git clone https://github.com/fmtlib/fmt
+git clone https://github.com/rsocket/rsocket-cpp
+git clone https://github.com/facebookincubator/fizz
+cd ../../
+
+mkdir RESDSQL/third_party
+cd RESDSQL/third_party
+git clone https://github.com/ElementAI/spider.git
+git clone https://github.com/ElementAI/test-suite-sql-eval.git
+mv ./test-suite-sql-eval ./test_suite
 ```
 
 ## T5 and PICARD
